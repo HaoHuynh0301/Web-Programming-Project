@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include 'head.php'; ?>
+<?php include './templates/head.php'; ?>
 
 <body>
 
   <!-- Navigation -->
-  <?php include 'nav.php'; ?>
+  <?php include './templates/nav.php'; ?>
 
   <!-- Page Header -->
   <header class="masthead" style="background-image: url('img/writing.jpg')">
@@ -27,9 +27,6 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
-        <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
-        <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
         <form name="sentMessage" id="contactForm" novalidate>
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">
@@ -56,9 +53,9 @@
   <hr>
 
   <!-- Footer -->
-  <?php include 'footer.php'; ?>
+  <?php include './templates/footer.php'; ?>
 
-  <!-- Bootstrap core JavaScript -->
+  <!-- JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 

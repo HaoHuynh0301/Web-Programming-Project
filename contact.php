@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include 'head.php'; ?>
+<?php include './templates/head.php'; ?>
 
 <body>
 
   <!-- Navigation -->
-  <?php include 'nav.php'; ?>
+  <?php include './templates/nav.php'; ?>
 
   <!-- Page Header -->
   <header class="masthead" style="background-image: url('img/contact-bg.jpg')">
@@ -71,18 +71,10 @@
   <hr>
 
   <!-- Footer -->
-  <?php include 'footer.php'; ?>
+  <?php include './templates/footer.php'; ?>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Contact Form JavaScript -->
-  <script src="js/jqBootstrapValidation.js"></script>
-  <script src="js/contact_me.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="js/clean-blog.min.js"></script>
+  <?php include './templates/scrips.php'; ?>
 
 </body>
 
