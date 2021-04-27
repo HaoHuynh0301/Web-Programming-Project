@@ -74,10 +74,10 @@
   <hr>
 
     <!-- Footer -->
-  <?php include 'footer.php'; ?>
+  <?php include './templates/footer.php'; ?>
 
   <!-- JavaScript -->
-  <?php include 'scrips.php'; ?>
+  <?php include './templates/scrips.php'; ?>
 
 </body>
 

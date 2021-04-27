@@ -16,17 +16,13 @@
 	            <a class='nav-link' href='about.php'>About</a>
 	          </li>
 	          <li class='nav-item'>
-	            <a class='nav-link' href='post.php'>Sample Post</a>
+	            <a class='nav-link' href='post 2.php'>Sample Post</a>
 	          </li>
 	          <li class='nav-item'>
 	            <a class='nav-link' href='contact.php'>Contact</a>
 	          </li>
 	          <li class='nav-item'>
-<<<<<<< HEAD
-	            <a class='nav-link' href='#'>Login</a>
-=======
 	            <a class='nav-link' href='login.php'>Login</a>
->>>>>>> b4aa7b8ecfb5a13dd394dc24b2723c62e2ec0e44
 	          </li>
 	        </ul>
 	      </div>

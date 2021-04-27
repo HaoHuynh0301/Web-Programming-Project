@@ -9,8 +9,6 @@ function getData()
     if (mysqli_num_rows($result) > 0) {
         return $result;
     }
-<<<<<<< HEAD
-=======
 }
 
 function getDetail($id) {
@@ -30,5 +28,4 @@ function getSamplePost() {
 		return $Result;
 	}
      
->>>>>>> b4aa7b8ecfb5a13dd394dc24b2723c62e2ec0e44
 }
