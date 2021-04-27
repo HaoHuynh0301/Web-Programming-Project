@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-<?php require_once('./php/show-blog.php') ?>
-
->>>>>>> b4aa7b8ecfb5a13dd394dc24b2723c62e2ec0e44
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,13 +7,6 @@
   <!-- Navigation -->
   <?php include './templates/nav.php'; ?>
 
-<<<<<<< HEAD
-=======
-  <?php 
-    $result = getSamplePost();
-  ?>
-
->>>>>>> b4aa7b8ecfb5a13dd394dc24b2723c62e2ec0e44
   <!-- Page Header -->
   <header class="masthead" style="background-image: url('img/post-bg.jpg')">
     <div class="overlay"></div>
@@ -26,20 +14,8 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-heading">
-<<<<<<< HEAD
             <h1>Man must explore, and this is exploration at its greatest</h1>
             <h2 class="subheading">Problems look mighty small from 150 miles up</h2>
-=======
-            <h1>
-            <?php
-              $content = "";
-              while ($row = mysqli_fetch_array($result)) {
-                echo "<h1>". $row['blog_title']. "</h1>";
-                $content = $row['blog_content'];
-              }
-            ?>
-            </h1>
->>>>>>> b4aa7b8ecfb5a13dd394dc24b2723c62e2ec0e44
             <span class="meta">Posted by
               <a href="#">Start Bootstrap</a>
               on August 24, 2019</span>
@@ -54,7 +30,6 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-<<<<<<< HEAD
           <p>Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.</p>
 
           <p>Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.</p>
@@ -91,9 +66,6 @@
           <p>Placeholder text by
             <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by
             <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
-=======
-           <p><?php echo $content; ?> </p>
->>>>>>> b4aa7b8ecfb5a13dd394dc24b2723c62e2ec0e44
         </div>
       </div>
     </div>

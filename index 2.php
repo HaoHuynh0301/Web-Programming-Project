@@ -37,11 +37,7 @@
           $result = getData();
           while ($row = mysqli_fetch_array($result)) {
           ?>
-<<<<<<< HEAD
             <a href="post.php">
-=======
-            <a href="detail.php?id=<?php echo $row['blog_id']; ?>">
->>>>>>> b4aa7b8ecfb5a13dd394dc24b2723c62e2ec0e44
               <h2 class="post-title">
                 <?php echo $row['blog_title']?>
               </h2>
@@ -73,30 +69,6 @@
   <!-- JavaScript -->
   <?php include 'scrips.php'; ?>
 
-<<<<<<< HEAD
 </body>
 
 </html>
-=======
-  <script>
-    function showHint(str) {
-      if (str.length == 0) { 
-        document.getElementById("txtHint").innerHTML = "";
-        return;
-      } else {
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("txtHint").innerHTML = this.responseText;
-          }
-        }
-        xmlhttp.open("GET", "gethint.php?q="+str, true);
-        xmlhttp.send();
-      }
-    }
-    </script>
-
-</body>
-
-</html>
->>>>>>> b4aa7b8ecfb5a13dd394dc24b2723c62e2ec0e44
