@@ -1,14 +1,18 @@
 <?php
 include('./php/db-connector.php');
 
+
 if (isset($_POST['submit'])) {
 	$username = textboxValue("username");
 	$password = textboxValue("password");
-
+	
 	$sql = "select * from users where users_username = '$username' and users_password = '$password'";
 	$result = mysqli_query($conn, $sql);
 	if (mysqli_num_rows($result) > 0) {
-		# code...
+		session_start();
+		$row = mysqli_fetch_assoc($result);
+		$_SESSION['username'] = $row['users_username'];
+		header("Location: index.php");
 	} else {
 		echo "<script>alert('Wrong password or username');</script>";
 	}
