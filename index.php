@@ -1,4 +1,6 @@
-<?php require_once('./php/show-blog.php') ?>
+<?php
+require_once('./php/show-blog.php');
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,15 +41,15 @@
           ?>
             <a href="detail.php?id=<?php echo $row['blog_id']; ?>">
               <h2 class="post-title">
-                <?php echo $row['blog_title']?>
+                <?php echo $row['blog_title'] ?>
               </h2>
               <h3 class="post-subtitle">
-                <?php 
-                echo mb_substr($row['blog_content'], 0, 100, "UTF-8") . "..." ;
+                <?php
+                echo mb_substr($row['blog_content'], 0, 100, "UTF-8") . "...";
                 ?>
               </h3>
             </a>
-            <p class="post-meta">Posted on <?php echo $row['blog_date']?></p>
+            <p class="post-meta">Posted on <?php echo $row['blog_date'] ?></p>
           <?php
           }
           ?>
@@ -64,14 +66,14 @@
   <hr>
 
   <!-- Footer -->
-  <?php include 'footer.php'; ?>
+  <?php include './templates/footer.php'; ?>
 
   <!-- JavaScript -->
-  <?php include 'scrips.php'; ?>
+  <?php include './templates/scrips.php'; ?>
 
   <script>
     function showHint(str) {
-      if (str.length == 0) { 
+      if (str.length == 0) {
         document.getElementById("txtHint").innerHTML = "";
         return;
       } else {
@@ -81,11 +83,11 @@
             document.getElementById("txtHint").innerHTML = this.responseText;
           }
         }
-        xmlhttp.open("GET", "gethint.php?q="+str, true);
+        xmlhttp.open("GET", "gethint.php?q=" + str, true);
         xmlhttp.send();
       }
     }
-    </script>
+  </script>
 
 </body>
 

@@ -4,6 +4,7 @@ $username = "root";
 $password = "";
 $dbname = "blog_website";
 
+
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 

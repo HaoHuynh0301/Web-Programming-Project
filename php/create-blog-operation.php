@@ -1,16 +1,20 @@
 <?php
 require_once("./php/db-connector.php");
 
+session_start();
+
+if(empty($_SESSION["auth"]) || $_SESSION["auth"] == 'false') {
+    header('Location: login.php');
+}
+
 if (isset($_POST['create'])) {
     $title = textboxValue("title");
     $content = textboxValue("content");
 
     if ($title && $content) {
-        $sql = "insert into blog(blog_title, blog_content) values('$title','$content')";
-
-        if (!mysqli_query($GLOBALS['conn'], $sql)) {
-            sendNotification("error", "Please insert data");
-        }
+        $user_id = $_SESSION['user_id'];
+        $sql = "insert into blog(blog_title, blog_content, user_id) values('$title','$content', $user_id)";
+        mysqli_query($GLOBALS['conn'], $sql);
     }
 }
 
