@@ -8,6 +8,8 @@ function getData()
 
     if (mysqli_num_rows($result) > 0) {
         return $result;
+    } else {
+        return false;
     }
 }
 

@@ -1,5 +1,8 @@
 <?php
 include('./php/db-connector.php');
+error_reporting(0);
+session_save_path('C:\xampp\tmp');
+session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$username = textboxValue("username");

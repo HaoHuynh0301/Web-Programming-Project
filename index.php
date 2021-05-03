@@ -10,42 +10,7 @@ require_once('./php/show-blog.php');
 <body>
 
   <!-- Navigation -->
-  <nav class='navbar navbar-expand-lg navbar-light fixed-top' id='mainNav'>
-    <div class='container'>
-      <a class='navbar-brand' href='index.php'>Blog website</a>
-      <button class='navbar-toggler navbar-toggler-right' type='button' data-toggle='collapse' data-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation'>
-        Menu
-        <i class='fas fa-bars'></i>
-      </button>
-      <div class='collapse navbar-collapse' id='navbarResponsive'>
-        <ul class='navbar-nav ml-auto'>
-          <li class='nav-item'>
-            <a class='nav-link' href='index.php'>Home</a>
-          </li>
-          <li class='nav-item'>
-            <a class='nav-link' href='about.php'>About</a>
-          </li>
-          <li class='nav-item'>
-            <a class='nav-link' href='post 2.php'>Sample Post</a>
-          </li>
-          <li class='nav-item'>
-            <a class='nav-link' href='contact.php'>Contact</a>
-          </li>
-          <?php 
-            if(isset($_SESSION['username'])) {
-              echo "<li class='nav-item'>
-                      <a class='nav-link' href='login.php'>Login</a>
-                    </li>";
-            } else {
-              echo "<li class='nav-item'>
-                      <a class='nav-link' href='login.php'>Login</a>
-                    </li>";
-            }
-          ?>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <?php include './templates/nav.php'; ?>
 
   <!-- Page Header -->
   <header class="masthead" style="background-image: url('img/home-bg.jpg')">
@@ -72,20 +37,24 @@ require_once('./php/show-blog.php');
         <div class="post-preview">
           <?php
           $result = getData();
-          while ($row = mysqli_fetch_array($result)) {
+          if ($result) {
+            while ($row = mysqli_fetch_array($result)) {
           ?>
-            <a href="detail.php?id=<?php echo $row['blog_id']; ?>">
-              <h2 class="post-title">
-                <?php echo $row['blog_title'] ?>
-              </h2>
-              <h3 class="post-subtitle">
-                <?php
-                echo mb_substr($row['blog_content'], 0, 100, "UTF-8") . "...";
-                ?>
-              </h3>
-            </a>
-            <p class="post-meta">Posted on <?php echo $row['blog_date'] ?></p>
-          <?php
+              <a href="detail.php?id=<?php echo $row['blog_id']; ?>">
+                <h2 class="post-title">
+                  <?php echo $row['blog_title'] ?>
+                </h2>
+                <h3 class="post-subtitle">
+                  <?php
+                  echo mb_substr($row['blog_content'], 0, 100, "UTF-8") . "...";
+                  ?>
+                </h3>
+              </a>
+              <p class="post-meta">Posted on <?php echo $row['blog_date'] ?></p>
+            <?php
+            }
+          } else {
+            echo "<h2 class='post-title'>Don't have any blogs here!</h2>";
           }
           ?>
         </div>
