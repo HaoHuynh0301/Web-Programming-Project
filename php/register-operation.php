@@ -6,6 +6,9 @@ if (isset($_POST['submit'])) {
 	$email = textboxValue("email");
 	$password = textboxValue("password");
 	$confirm_password = textboxValue("confirm_password");
+	$profile_img = $_FILES['profile_img']['name'];
+
+	$target = 'profile-img/' . $profile_img;
 
 	if ($password == $confirm_password) {
 		// Check email is duplicated or not.
@@ -22,7 +25,8 @@ if (isset($_POST['submit'])) {
 			} 
 			// Insert data to database. 
 			else {
-				$sql = "insert into users(users_username, users_email, users_password) values('$username', '$email', '$password')";
+				move_uploaded_file($_FILES['profile_img']['tmp_name'], $target);
+				$sql = "insert into users(users_username, users_email, users_password, profile_img) values('$username', '$email', '$password', '$profile_img')";
 				$result = mysqli_query($conn, $sql);
 				if (!$result) {
 					echo mysqli_error($conn);
