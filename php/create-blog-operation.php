@@ -11,11 +11,20 @@ if(empty($_SESSION["auth"]) || $_SESSION["auth"] == 'false') {
 if (isset($_POST['create'])) {
     $title = textboxValue("title");
     $content = textboxValue("content");
+    $cover = $_FILES['cover_img']['name'];
+
+	$target = './php/php-blog-website/blog-img/' . $cover;
 
     if ($title && $content) {
+        move_uploaded_file($_FILES['cover_img']['tmp_name'], $target);
         $user_id = $_SESSION['user_id'];
-        $sql = "insert into blog(blog_title, blog_content, user_id) values('$title','$content', $user_id)";
-        mysqli_query($GLOBALS['conn'], $sql);
+        $sql = "insert into blog(blog_title, blog_content, user_id, blog_img) values('$title', '$content', '$user_id', '$cover')";
+        $result = mysqli_query($GLOBALS['conn'], $sql);
+        if (!$result) {
+            echo mysqli_error($conn);
+        } else {
+            echo "<script>alert('Post created successfully!')</script>";
+        }
     }
 }
 

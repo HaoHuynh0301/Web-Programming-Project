@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 05, 2021 at 12:06 PM
+-- Generation Time: May 07, 2021 at 04:02 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -32,7 +32,8 @@ CREATE TABLE `blog` (
   `user_id` int(10) NOT NULL,
   `blog_date` date NOT NULL DEFAULT current_timestamp(),
   `blog_title` varchar(100) CHARACTER SET utf8 NOT NULL,
-  `blog_content` varchar(2000) CHARACTER SET utf8 NOT NULL
+  `blog_content` varchar(2000) CHARACTER SET utf8 NOT NULL,
+  `blog_img` varchar(255) COLLATE utf8_vietnamese_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
 
 -- --------------------------------------------------------
