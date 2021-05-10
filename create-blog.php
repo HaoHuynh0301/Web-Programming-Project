@@ -1,4 +1,4 @@
-<?php require_once("./php/create-blog-operation.php"); ?>
+<?php include("./php/create-blog-operation.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,10 +29,16 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        <form action="" method="post" novalidate>
+        <form action="" method="post" enctype="multipart/form-data">
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">
-              <label>Name</label>
+              <p style="margin: 0;">Upload cover for your post here!</p>
+              <input name="cover_img" type="file" class="form-control" id="cover-img">
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Title</label>
               <input name="title" type="text" class="form-control" placeholder="Title" id="title" required data-validation-required-message="Please enter your blog title.">
               <p class="help-block text-danger"></p>
             </div>
@@ -45,8 +51,7 @@
             </div>
           </div>
           <br>
-          <div id="success"></div>
-          <button name="create" type="submit" class="btn btn-primary" id="create-blog-button">Send</button>
+          <button name="submit" type="submit" class="btn btn-primary" id="create-blog-button">Send</button>
         </form>
       </div>
     </div>

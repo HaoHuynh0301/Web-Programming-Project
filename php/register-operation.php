@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
 	$confirm_password = textboxValue("confirm_password");
 	$profile_img = $_FILES['profile_img']['name'];
 
-	$target = 'profile-img/' . $profile_img;
+	$target = 'php/upload-img/profile-img/' . $profile_img;
 
 	if ($password == $confirm_password) {
 		// Check email is duplicated or not.

@@ -11,17 +11,33 @@
   <?php include './templates/nav.php'; ?>
 
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+  <?php
+    $res = getDetail($_GET['id']);
+    while ($row3 = mysqli_fetch_array($res)) {
+      $url = "'php/upload-img/blog-img/" . $row3['blog_img'] . "'";
+      echo '<header class="masthead" style="background-image: url(' . $url . ')">';
+    }
+  ?>
+  <!-- <header class="masthead" style="background-image: url('img/post-bg.jpg')"> -->
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="site-heading">
-            <h1>Clean Blog</h1>
-            <span class="subheading">“The scariest moment is always just before you start.”<br>Stephen King</span>
-            <a href="create-blog.php" class="btn btn-outline-light mt-3" style="border-radius: 50px; padding: 0.75em 1.5em">
-              Write now
-            </a>
+          <div class="post-heading">
+            <?php 
+              $result = getDetail($_GET['id']);
+              while ($row = mysqli_fetch_array($result)) {
+                echo "<h1>".  $row['blog_title'] . "</h1>";
+                
+                $user = getUser($row['user_id']);
+                while ($row2 = mysqli_fetch_array($user)) {
+                  echo "<span class='meta'>Posted by
+                          <a href='#'>" . $row2['users_username'] . "</a>
+                          on " . $row['blog_date'] ."
+                        </span>";
+                }
+              }
+            ?>
           </div>
         </div>
       </div>
@@ -37,8 +53,7 @@
           <?php 
             $result = getDetail($_GET['id']);
             while ($row = mysqli_fetch_array($result)) {
-              echo "<h1>".  $row['blog_title'] . "</h1><hr>
-                    <p>". $row['blog_content'] ."</p>";
+              echo "<p>". $row['blog_content'] ."</p>";
             }
           ?>
         </div>

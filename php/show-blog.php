@@ -22,6 +22,15 @@ function getDetail($id) {
     }
 }
 
+function getUser($id) {
+	$sql = "SELECT * FROM users WHERE user_id = $id";
+	$result = mysqli_query($GLOBALS['conn'], $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+        return $result;
+    }
+}
+
 function getSamplePost() {
 	$sql_title = "SELECT * FROM blog WHERE blog_id = 2";
 	$Result = mysqli_query($GLOBALS['conn'], $sql_title);
