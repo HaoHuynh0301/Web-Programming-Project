@@ -50,7 +50,14 @@ require_once('./php/show-blog.php');
                   ?>
                 </h3>
               </a>
-              <p class="post-meta">Posted on <?php echo $row['blog_date'] ?></p>
+              <p class="post-meta">
+                <?php
+                  $user = getUser($row['user_id']);
+                  while ($row2 = mysqli_fetch_array($user)) {
+                    echo "Posted by " . $row2['users_username'] . " on " . $row['blog_date'];
+                  }
+                ?>
+              </p>
             <?php
             }
           } else {
