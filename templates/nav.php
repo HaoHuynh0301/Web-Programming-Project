@@ -12,13 +12,13 @@ if(empty($_SESSION["auth"]) || $_SESSION["auth"] == 'false') {
 	      <div class='collapse navbar-collapse' id='navbarResponsive'>
 	        <ul class='navbar-nav ml-auto'>
 	          <li class='nav-item'>
-	            <a class='nav-link' href='index.php'>Home</a>
+	            <a class='nav-link' href='index.php?i=0'>Home</a>
 	          </li>
 	          <li class='nav-item'>
 	            <a class='nav-link' href='about.php'>About</a>
 	          </li>
 	          <li class='nav-item'>
-	            <a class='nav-link' href='post 2.php'>Sample Post</a>
+	            <a class='nav-link' href='post.php'>Sample Post</a>
 	          </li>
 	          <li class='nav-item'>
 	            <a class='nav-link' href='contact.php'>Contact</a>
@@ -44,13 +44,13 @@ else if($_SESSION["auth"] == 'true') {
 		<div class='collapse navbar-collapse' id='navbarResponsive'>
 			<ul class='navbar-nav ml-auto'>
 			<li class='nav-item'>
-				<a class='nav-link' href='index.php'>Home</a>
+				<a class='nav-link' href='index.php?i=0'>Home</a>
 			</li>
 			<li class='nav-item'>
 				<a class='nav-link' href='about.php'>About</a>
 			</li>
 			<li class='nav-item'>
-				<a class='nav-link' href='post 2.php'>Sample Post</a>
+				<a class='nav-link' href='post.php'>Sample Post</a>
 			</li>
 			<li class='nav-item'>
 				<a class='nav-link' href='contact.php'>Contact</a>

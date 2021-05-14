@@ -1,5 +1,6 @@
 <?php
 include('./php/db-connector.php');
+error_reporting(0);
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
