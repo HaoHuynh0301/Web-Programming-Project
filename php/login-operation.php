@@ -12,6 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	if (mysqli_num_rows($result) > 0) {
 		while($row = mysqli_fetch_assoc($result)) {
 			$_SESSION['user_id'] = $row['user_id'];
+			$_SESSION['role_id'] = $row['role_id'];
 		}
 		$_SESSION['auth'] = "true";
 		header("Location: index.php");
