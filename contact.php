@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include './templates/head.php'; ?>
+<?php 
+include './php/getContact.php';
+include './templates/head.php'; ?>
 
 <body>
 
@@ -28,7 +30,7 @@
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <p>Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!</p>
-        <form method="POST" aciton="php/getContact.php" name="sentMessage" id="contactForm" novalidate>
+        <form method="POST" aciton="" name="sentMessage" id="contactForm" novalidate>
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">
               <label>Name</label>

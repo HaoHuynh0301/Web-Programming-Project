@@ -1,18 +1,18 @@
 <?php 
-include('./php/db-connector.php');
+require_once("./php/db-connector.php");
+error_reporting(0);
+session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $name = textboxValue("name");
-    $email = textboxValue("email");
-    $phone = textboxValue("phone");
     $message = textboxValue("message");
+    $id = $_SESSION['postId'];
 
-    $sql = "INSERT INTO contact(contact_email, contact_message, contact_name, contact_phonenumber) VALUES ('$emai', '$message', '$name', '$phone')";
+    $sql = "INSERT INTO comment(blog_id, commment_message) VALUES ('$id', '$message')";
     $result = mysqli_query($conn, $sql);
     if (!$result) {
         echo mysqli_error($conn);
     } else {
-        echo "<script>alert('Get contact successfully!')</script>";
+        echo "<script>alert('Get comment successfully!')</script>";
     }
 }
 

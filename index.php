@@ -21,13 +21,13 @@ require_once('./php/show-blog.php');
   <?php include './templates/nav.php'; ?>
 
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+  <header class="masthead" style="background-image: url('img/blog.jpg')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="site-heading">
-            <h1>Clean Blog</h1>
+            <h1>Blog Site</h1>
             <span class="subheading">“The scariest moment is always just before you start.”<br>Stephen King</span>
             <a href="create-blog.php" class="btn btn-outline-light mt-3" style="border-radius: 50px; padding: 0.75em 1.5em">
               Write now

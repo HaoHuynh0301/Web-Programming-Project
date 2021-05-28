@@ -40,7 +40,7 @@ function getUser($id) {
 }
 
 function getSamplePost() {
-	$sql_title = "SELECT * FROM blog WHERE blog_id = 2";
+	$sql_title = "SELECT * FROM blog WHERE blog_id = 1";
 	$Result = mysqli_query($GLOBALS['conn'], $sql_title);
 
 	if (mysqli_num_rows($Result) > 0) {

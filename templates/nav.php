@@ -15,9 +15,6 @@ if(empty($_SESSION["auth"]) || $_SESSION["auth"] == 'false') {
 	            <a class='nav-link' href='index.php?i=0'>Home</a>
 	          </li>
 	          <li class='nav-item'>
-	            <a class='nav-link' href='about.php'>About</a>
-	          </li>
-	          <li class='nav-item'>
 	            <a class='nav-link' href='post.php'>Sample Post</a>
 	          </li>
 	          <li class='nav-item'>
