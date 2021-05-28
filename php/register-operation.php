@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
 			// Insert data to database. 
 			else {
 				move_uploaded_file($_FILES['profile_img']['tmp_name'], $target);
-				$sql = "insert into users(users_username, users_email, users_password, profile_img) values('$username', '$email', '$password', '$profile_img')";
+				$sql = "insert into users(users_username, users_email, users_password, profile_img, role_id) values('$username', '$email', '$password', '$profile_img', 'au02')";
 				$result = mysqli_query($conn, $sql);
 				if (!$result) {
 					echo mysqli_error($conn);

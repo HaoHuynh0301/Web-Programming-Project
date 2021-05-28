@@ -1,4 +1,10 @@
-<?php require_once('./php/show-blog.php') ?>
+<?php require_once('./php/show-blog.php'); 
+      include('./php/getMessage.php');
+      error_reporting(0);
+      session_start();
+      $_SESSION['postId'] = $_GET['id'];
+      $role = $_SESSION['role_id'];
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -55,6 +61,65 @@
             while ($row = mysqli_fetch_array($result)) {
               echo "<p>". $row['blog_content'] ."</p>";
             }
+            if($role == 'ad01') {
+              echo "<div class='col-lg-8 col-md-10 mx-auto'>
+                        <button type='button' class='btn btn-outline-dark mt-3 subheading' data-toggle='modal' data-target='#myModal'>Write your commment</button>
+                        <a href='editPost.php' type='button' class='btn btn-outline-dark mt-3 subheading'>Edit</a>
+                        </div>
+                
+                <div class='modal fade' id='myModal' role='dialog'>
+                <div class='modal-dialog'>
+                
+                  <!-- Modal content-->
+                  <div class='modal-content'>
+                    <div class='modal-header'>
+                      <h4 class='modal-title'>Give us your comment</h4>
+                      <button type='button' class='close' data-dismiss='modal'>&times;</button>
+                    </div>
+                    <div class='modal-body'>
+                      <form method='POST' aciton='' name='sentMessage' id='contactForm' novalidate>
+                          <label for='message'>Write your comment</label>
+                          <textarea name = 'message' rows='5' class='form-control' placeholder='Message' id='message' required data-validation-required-message='Please enter a message.'></textarea>
+                          <input class='btn btn-outline-dark mt-3 subheading' type='submit' value='SEND'>
+                      </form>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+                
+                ";
+            } else {
+              echo "<div class='col-lg-8 col-md-10 mx-auto'>
+                        <button type='button' class='btn btn-outline-dark mt-3 subheading' data-toggle='modal' data-target='#myModal'>Write your commment</button>
+                        </div>
+                
+                <div class='modal fade' id='myModal' role='dialog'>
+                <div class='modal-dialog'>
+                
+                  <!-- Modal content-->
+                  <div class='modal-content'>
+                    <div class='modal-header'>
+                      <h4 class='modal-title'>Give us your comment</h4>
+                      <button type='button' class='close' data-dismiss='modal'>&times;</button>
+                    </div>
+                    <div class='modal-body'>
+                      <form method='POST' aciton='' name='sentMessage' id='contactForm' novalidate>
+                          <label for='message'>Write your comment</label>
+                          <textarea name = 'message' rows='5' class='form-control' placeholder='Message' id='message' required data-validation-required-message='Please enter a message.'></textarea>
+                          <input class='btn btn-outline-dark mt-3 subheading' type='submit' value='SEND'>
+                      </form>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+                
+                ";
+            }
+            
+
+            
           ?>
         </div>
       </div>
