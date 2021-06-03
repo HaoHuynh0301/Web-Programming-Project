@@ -48,3 +48,25 @@ function getSamplePost() {
 	}
      
 }
+
+function getComment($id) {
+    $sql = "SELECT * FROM comment WHERE blog_id = $id";
+    $Result = mysqli_query($GLOBALS['conn'], $sql);
+
+	if (mysqli_num_rows($Result) > 0) {
+		return $Result;
+	} else {
+        return false;
+    }
+}
+
+function getUserFromBlogId($id) {
+    $sql = "SELECT users_username AS name from users WHERE user_id = '$id'";
+    $Result = mysqli_query($GLOBALS['conn'], $sql);
+
+	if (mysqli_num_rows($Result) > 0) {
+		return $Result;
+	} else {
+        return false;
+    }
+}

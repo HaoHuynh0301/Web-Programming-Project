@@ -25,4 +25,15 @@ function textboxValue($value)
 		return $validation;
 	}
 }
+
+function getContacts() {
+    $sql = "SELECT * FROM contact";
+    $Result = mysqli_query($GLOBALS['conn'], $sql);
+
+	if (mysqli_num_rows($Result) > 0) {
+		return $Result;
+	} else {
+        return false;
+    }
+}
 ?>
