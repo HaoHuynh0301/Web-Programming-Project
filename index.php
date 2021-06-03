@@ -4,14 +4,13 @@ require_once('./php/show-blog.php');
 
 <!DOCTYPE html>
 <html lang="en">
-  <style> 
+<style> 
   .blur {
     filter: blur(2px);
     -webkit-filter: blur(1px);
     pointer-events: None;
   }
-  </style>
-
+</style>
 
 <?php include './templates/head.php'; ?>
 

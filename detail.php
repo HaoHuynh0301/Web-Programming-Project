@@ -3,7 +3,6 @@
       error_reporting(0);
       session_start();
       $_SESSION['postId'] = $_GET['id'];
-      $role = $_SESSION['role_id'];
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +19,7 @@
   <?php
     $res = getDetail($_GET['id']);
     while ($row3 = mysqli_fetch_array($res)) {
+      $tmpUserName = $row3['user_id'];
       $url = "'php/upload-img/blog-img/" . $row3['blog_img'] . "'";
       echo '<header class="masthead" style="background-image: url(' . $url . ')">';
     }
@@ -61,13 +61,13 @@
             while ($row = mysqli_fetch_array($result)) {
               echo "<p>". $row['blog_content'] ."</p>";
             }
-            if($role == 'ad01') {
+            if($tmpUserName == $_SESSION['user_id']) {
               echo "<div class='col-lg-8 col-md-10 mx-auto'>
                         <button type='button' class='btn btn-outline-dark mt-3 subheading' data-toggle='modal' data-target='#myModal'>Write your commment</button>
                         <a href='editPost.php' type='button' class='btn btn-outline-dark mt-3 subheading'>Edit</a>
                         </div>
                 
-                <div class='modal fade' id='myModal' role='dialog'>
+              <div class='modal fade' id='myModal' role='dialog'>
                 <div class='modal-dialog'>
                 
                   <!-- Modal content-->
@@ -86,9 +86,7 @@
                   </div>
                   
                 </div>
-              </div>
-                
-                ";
+              </div>";
             } else {
               echo "<div class='col-lg-8 col-md-10 mx-auto'>
                         <button type='button' class='btn btn-outline-dark mt-3 subheading' data-toggle='modal' data-target='#myModal'>Write your commment</button>
@@ -113,14 +111,27 @@
                   </div>
                   
                 </div>
-              </div>
-                
-                ";
-            }
-            
-
-            
+              </div>";
+            }       
           ?>
+          <h2 class="post-subtitle" style="margin-top:40px">Comments</h2><hr>
+          <div class="commented-section mt-2">
+            <?php 
+            $result=getComment($_GET['id']);
+            if($result != false) {
+              while ($row = mysqli_fetch_array($result)) {
+                echo "
+                <div class='d-flex flex-row align-items-center commented-user'>
+                    <h5 class='mr-2'>Anonymous user</h5><span class='dot mb-1'></span><span class='mb-1 ml-2'>Posted in ". $row['posted_time'] ."</span>
+                </div>
+                <div class='comment-text-sm'><span>" . $row['commment_message'] . "</span></div><hr>";
+              }
+            } else {
+              echo "No comments!";
+            }
+            ?>
+        </div>
+          
         </div>
       </div>
     </div>
