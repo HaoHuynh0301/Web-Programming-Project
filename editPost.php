@@ -2,6 +2,7 @@
         include('./php/show-blog.php');
         include('./php/getEditPost.php');
         error_reporting(0);
+        session_save_path('C:\xampp\tmp');
         session_start();
 ?>
 

@@ -1,6 +1,7 @@
 <?php require_once('./php/show-blog.php'); 
       include('./php/getMessage.php');
       error_reporting(0);
+      session_save_path('C:\xampp\tmp');
       session_start();
       $_SESSION['postId'] = $_GET['id'];
       $role = $_SESSION['role_id'];

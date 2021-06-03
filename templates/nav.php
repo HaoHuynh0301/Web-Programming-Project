@@ -53,6 +53,14 @@ else if($_SESSION["auth"] == 'true') {
 			<li class='nav-item'>
 				<a class='nav-link' href='logout.php'>Logout</a>
 			</li>
+			<li class='nav-item dropdown' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+				<a class='nav-link' href='logout.php'><i class='fas fa-chevron-circle-down' style='font-size: 1.5em;'></i></a>
+				<div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>
+					<a class='dropdown-item' href='#'>Action</a>
+					<a class='dropdown-item' href='#'>Another action</a>
+					<a class='dropdown-item' href='#'>Something else here</a>
+				</div>
+			</li>
 			</ul>
 		</div>
 		</div>
